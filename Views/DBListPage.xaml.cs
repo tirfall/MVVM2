@@ -70,4 +70,15 @@ public partial class DBListPage : ContentPage
             return new ViewCell { View = new HorizontalStackLayout { Children = { labelList } } };
         });
     }
+    [Obsolete]
+    private void SortImage(object sender, EventArgs e)
+    {
+        friendsList.ItemTemplate = new DataTemplate(() =>
+        {
+            Friend friend = (Friend)BindingContext;
+            Image image = new Image();
+            image.Source = ImageSource.FromStream(()=>new MemoryStream(friend.Img));
+            return new ViewCell { View = new HorizontalStackLayout { Children = { image } } };
+        });
+    }
 }

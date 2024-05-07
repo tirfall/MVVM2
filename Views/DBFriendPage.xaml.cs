@@ -10,7 +10,14 @@ public partial class DBFriendPage : ContentPage
 	public DBFriendPage()
 	{
 		InitializeComponent();
+        Loaded += DBFriendPage_Loaded;
 	}
+
+    private void DBFriendPage_Loaded(object sender, EventArgs e)
+    {
+        Friend friend = (Friend)BindingContext;
+        pilt.Source = ImageSource.FromStream(() => new MemoryStream(friend.Img));
+    }
 
     private void SaveFriend(object sender, EventArgs e)
     {
@@ -32,6 +39,14 @@ public partial class DBFriendPage : ContentPage
 
     private async void Button_Clicked(object sender, EventArgs e)
     {
-        nimii.Text = "dfsd";
+        await CrossMedia.Current.Initialize();
+        MediaFile new_image = await CrossMedia.Current.PickPhotoAsync();
+        Friend friend = (Friend)BindingContext;
+        Stream stream = await ((StreamImageSource)ImageSource.FromStream(new_image.GetStream)).Stream(CancellationToken.None);
+        byte[] image = new byte[stream.Length];
+        stream.Read(image, 0, image.Length);
+        friend.Img = image;
+        App.Database.SaveItem(friend);
+        pilt.Source = ImageSource.FromStream(new_image.GetStream);
     }
 }

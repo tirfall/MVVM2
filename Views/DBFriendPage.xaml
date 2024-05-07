@@ -4,8 +4,8 @@
              x:Class="MVVM.Views.DBFriendPage"
              Title="DBFriendPage">
     <StackLayout>
-        <Label Text="Nimi" x:Name="nimii"/>
-        <Entry Text="{Binding Name}"/>
+        <Label Text="Nimi"/>
+        <Entry Text="{Binding Name}" x:Name="nimii"/>
         <Label Text="Email"/>
         <Entry Text="{Binding Email}" Keyboard="Email"/>
         <Label Text="Telefon"/>
@@ -13,8 +13,7 @@
         <Label Text="Vanus"/>
         <Entry Text="{Binding Age}" Keyboard="Numeric"/>
         <Label Text="Pilt"/>
-        <Label Text="{Binding Img}" IsVisible = "False"/>
-        <Image x:Name="pilt"/>
+        <Image x:Name="pilt" HeightRequest="100"/>
         <Button Text="Vali pilt" Clicked="Button_Clicked"/>
         <HorizontalStackLayout>
             <Button Text="Salvesta" Clicked="SaveFriend" WidthRequest="130" TextColor="White"/>
