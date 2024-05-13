@@ -12,6 +12,5 @@ namespace MVVM.Models
         public string Email { get; set; }
         public string Phone { get; set; }
         public string Age { get; set; } 
-        public byte[] Img { get; set; }
     }
 }

@@ -30,55 +30,5 @@ public partial class DBListPage : ContentPage
         friendPage.BindingContext= friend;
         await Navigation.PushAsync(friendPage);
     }
-    [Obsolete]
-    private void SortName(object sender, EventArgs e)
-    {
-        friendsList.ItemTemplate = new DataTemplate(() =>
-        {
-            Label labelList = new Label { FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)) };
-            labelList.SetBinding(Label.TextProperty, "Name");
-            return new ViewCell { View = new HorizontalStackLayout { Children = { labelList } } };
-        });
-    }
-    [Obsolete]
-    private void SortEmail(object sender, EventArgs e)
-    {
-        friendsList.ItemTemplate = new DataTemplate(() =>
-        {
-            Label labelList = new Label { FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)) };
-            labelList.SetBinding(Label.TextProperty, "Email");
-            return new ViewCell { View = new HorizontalStackLayout { Children = { labelList } } };
-        });
-    }
-    [Obsolete]
-    private void SortPhone(object sender, EventArgs e)
-    {
-        friendsList.ItemTemplate = new DataTemplate(() =>
-        {
-            Label labelList = new Label { FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)) };
-            labelList.SetBinding(Label.TextProperty, "Phone");
-            return new ViewCell { View = new HorizontalStackLayout { Children = { labelList } } };
-        });
-    }
-    [Obsolete]
-    private void SortAge(object sender, EventArgs e)
-    {
-        friendsList.ItemTemplate = new DataTemplate(() =>
-        {
-            Label labelList = new Label { FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label)) };
-            labelList.SetBinding(Label.TextProperty, "Age");
-            return new ViewCell { View = new HorizontalStackLayout { Children = { labelList } } };
-        });
-    }
-    [Obsolete]
-    private void SortImage(object sender, EventArgs e)
-    {
-        friendsList.ItemTemplate = new DataTemplate(() =>
-        {
-            Friend friend = (Friend)BindingContext;
-            Image image = new Image();
-            image.Source = ImageSource.FromStream(()=>new MemoryStream(friend.Img));
-            return new ViewCell { View = new HorizontalStackLayout { Children = { image } } };
-        });
-    }
+
 }

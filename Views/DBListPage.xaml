@@ -4,21 +4,14 @@
              x:Class="MVVM.Views.DBListPage"
              Title="DBListPage">
     <StackLayout>
-        <HorizontalStackLayout HorizontalOptions="Center">
-            <Button Text="Nimi" Clicked="SortName" WidthRequest="80" TextColor="White"/>
-            <Button Text="Email" Clicked="SortEmail" WidthRequest="80" TextColor="White"/>
-            <Button Text="Telefon" Clicked="SortPhone" WidthRequest="80" TextColor="White"/>
-            <Button Text="Vanus" Clicked="SortAge" WidthRequest="80" TextColor="White"/>
-            <Button Text="Pilt" Clicked="SortImage" WidthRequest="80" TextColor="White"/>
-        </HorizontalStackLayout>
         <ListView x:Name="friendsList" ItemsSource="{Binding}" ItemSelected="OnItemSelected">
             <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
+                <DataTemplate >
+                    <ViewCell >
                         <ViewCell.View>
-                            <HorizontalStackLayout>
-                                <Label Text="{Binding Name}" FontSize="Medium"></Label>
-                            </HorizontalStackLayout>
+                            <StackLayout >
+                                <Label Text="{Binding Name}" FontSize="Large" VerticalOptions="CenterAndExpand"></Label>
+                            </StackLayout>
                         </ViewCell.View>
                     </ViewCell>
                 </DataTemplate>
