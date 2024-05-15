@@ -40,8 +40,11 @@ namespace MVVM.ViewModels
             if (PropertyChanged == null) return;
             PropertyChanged(this, new PropertyChangedEventArgs(propName));
         }
-        private void CreateFriend() => Navigation.PushAsync(new FriendPage(new FriendViewModel() { FriendsListViewModel = this }));
-        private void Back() => Navigation.PopAsync();
+        private void CreateFriend() 
+        { 
+            Navigation.PushAsync(new FriendPage(new FriendViewModel() { FriendsListViewModel = this })); 
+        }
+        private void Back() { Navigation.PopAsync(); }
         private void SaveFriend(object friendObj)
         {
             if (friendObj is not FriendViewModel friend || friend == null || !friend.IsValid || Friends.Contains(friend)) return;

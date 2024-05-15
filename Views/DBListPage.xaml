@@ -10,7 +10,15 @@
                     <ViewCell >
                         <ViewCell.View>
                             <StackLayout >
-                                <Label Text="{Binding Name}" FontSize="Large" VerticalOptions="CenterAndExpand"></Label>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Name}" FontSize="Medium" VerticalOptions="CenterAndExpand"></Label>
+                                    <Label Text="Vanus:" FontSize="Medium" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand"></Label>
+                                    <Label Text="{Binding Age}" FontSize="Medium" VerticalOptions="CenterAndExpand" HorizontalOptions="End"></Label>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Email}" FontSize="Medium" VerticalOptions="CenterAndExpand"></Label>
+                                    <Label Text="{Binding Phone}" FontSize="Medium" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand"></Label>
+                                </StackLayout>
                             </StackLayout>
                         </ViewCell.View>
                     </ViewCell>
