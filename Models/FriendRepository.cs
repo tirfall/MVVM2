@@ -11,12 +11,9 @@ namespace MVVM.Models
             database = new SQLiteConnection(databasePath);
             database.CreateTable<Friend>();
         }
-        public IEnumerable<Friend> GetItems() => 
-            database.Table<Friend>().ToList();
-        public Friend GetItem(int id) =>
-            database.Get<Friend>(id);
-        public int DeleteItem(int id) =>
-            database.Delete<Friend>(id);
+        public IEnumerable<Friend> GetItems() { return database.Table<Friend>().ToList(); }
+        public Friend GetItem(int id) { return database.Get<Friend>(id); }
+        public int DeleteItem(int id) { return database.Delete<Friend>(id);  }
         public int SaveItem(Friend item)
         {
             if (item.Id != 0)
