@@ -33,8 +33,8 @@ public partial class DBFriendPage : ContentPage
         Navigation.PopAsync();
     }
 
-    private void Cancel(object sender, EventArgs e) =>
-        Navigation.PopAsync();
+    private void Cancel(object sender, EventArgs e) { Navigation.PopAsync(); }
+        
 
     private async void Button_Clicked(object sender, EventArgs e)
     {

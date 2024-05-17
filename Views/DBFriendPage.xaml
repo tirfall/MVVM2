@@ -13,9 +13,9 @@
         <Label Text="Vanus"/>
         <Entry Text="{Binding Age}" Keyboard="Numeric"/>
         <HorizontalStackLayout>
-            <Button Text="Salvesta" Clicked="SaveFriend" WidthRequest="130" TextColor="White"/>
-            <Button Text="Kustuta" Clicked="DeleteFriend" WidthRequest="130" TextColor="White"/>
-            <Button Text="Tühista" Clicked="Cancel" WidthRequest="130" TextColor="White"/>
+            <Button Text="Salvesta" Clicked="SaveFriend" WidthRequest="130" TextColor="White" BackgroundColor="Green"/>
+            <Button Text="Kustuta" Clicked="DeleteFriend" WidthRequest="130" TextColor="White" BackgroundColor="Green"/>
+            <Button Text="Tühista" Clicked="Cancel" WidthRequest="130" TextColor="White" BackgroundColor="Green"/>
         </HorizontalStackLayout>
     </StackLayout>
 </ContentPage>

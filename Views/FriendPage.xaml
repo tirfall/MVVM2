@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MVVM.Views.FriendPage"
              Title="FriendPage">
-    <VerticalStackLayout>
-        <StackLayout x:Name="friendStack">
+    <VerticalStackLayout BackgroundColor="AntiqueWhite">
+        <StackLayout x:Name="friendStack" >
             <Label Text="Nimi"/>
             <Entry Text="{Binding Name}" FontSize="Medium"/>
             <Label Text="Email"/>
@@ -16,14 +16,17 @@
             <Button 
                 Text="Lisa"
                 Command="{Binding FriendsListViewModel.SaveFriendCommand}"
-                CommandParameter="{Binding}" />
+                CommandParameter="{Binding}"
+                BackgroundColor="Green"/>
             <Button 
                 Text="Kustuta"
                 Command="{Binding FriendsListViewModel.DeleteFriendCommand}"
-                CommandParameter="{Binding}" />
+                CommandParameter="{Binding}"
+                BackgroundColor="Green"/>
             <Button 
                 Text="Tagasi"
-                Command="{Binding FriendsListViewModel.BackCommand}" />
+                Command="{Binding FriendsListViewModel.BackCommand}"
+                BackgroundColor="Green"/>
         </HorizontalStackLayout>
     </VerticalStackLayout>
 </ContentPage>

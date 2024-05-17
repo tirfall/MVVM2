@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MVVM.Views.DBListPage"
              Title="DBListPage">
-    <StackLayout>
+    <StackLayout BackgroundColor="AntiqueWhite">
         <ListView x:Name="friendsList" ItemsSource="{Binding}" ItemSelected="OnItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate >
@@ -25,6 +25,6 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button Text="Lisa" Clicked="CreateFriend" TextColor="White"/>
+        <Button Text="Lisa" Clicked="CreateFriend" TextColor="White" BackgroundColor="Green"/>
     </StackLayout>
 </ContentPage>
